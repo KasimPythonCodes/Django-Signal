@@ -17,7 +17,7 @@ from django.dispatch import receiver
 # pre_delete.connect(delete_pre  , sender = Student)
 
 
-# @receiver(post_save , sender=User)
-# def student(sender , instance ,created ,  **kwargs):
-#     if created :
-#         Student.objects.create(user=instance , name="" , password="")
+@receiver(post_save , sender=User)
+def student(sender , instance ,created ,  **kwargs):
+    if created :
+        Student.objects.create(user=instance , name="" , password="")
